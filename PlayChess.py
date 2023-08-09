@@ -1,5 +1,6 @@
 from PIL import Image,ImageTk
 import tkinter as tk
+from tkinter import messagebox
 import os
 from tkinter import ttk
 
@@ -9,7 +10,7 @@ def start():
     with open("perf.txt","w") as file:
         file.writelines(F"{b}{P}")
     root.destroy()
-    os.system("""python "chess 0.1.9 .py" """)
+    os.system("""python "chessGameCode.py" """)
 
 root=tk.Tk()
 img0 = ImageTk.PhotoImage(Image.open(".\\res\\0.png"))
@@ -60,5 +61,6 @@ C5.pack(side = tk.LEFT,padx=15)
 pieceFrame.pack(expand=True,fill = tk.BOTH)
 
 tk.Button(root,text = "Play",command = start,font = "dev 25").pack(fill = tk.X ,side = tk.BOTTOM)
+messagebox.showwarning("STILL in devlopment!","The chess game is still in devlopment show something and feature might not work!")
 
 root.mainloop()
